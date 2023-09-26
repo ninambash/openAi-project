@@ -1,16 +1,19 @@
-
+import { useState } from "react";
 import { logo } from "../assets";
 
+
 const Hero = () => {
+  const [image, setImage] = useState(null); // State to store uploaded image
+
   const heroStyles = {
-    backgroundColor: "#F8F8F8", // Background color for the hero section
+    backgroundColor: "blue",
     padding: "2rem",
     textAlign: "center",
-    position: "relative", // Add relative positioning to the hero container
+    position: "relative",
   };
 
   const logoStyles = {
-    width: "180px", // Adjust the logo size as needed
+    width: "180px",
   };
 
   const buttonStyles = {
@@ -19,10 +22,10 @@ const Hero = () => {
     padding: "10px 20px",
     borderRadius: "50px",
     cursor: "pointer",
-    position: "absolute", // Add absolute positioning
-    top: "20px", // Adjust the top position as needed
-    right: "20px", // Adjust the right position as needed
-    zIndex: 1, // Set a higher z-index to bring it to the top
+    position: "absolute",
+    top: "20px",
+    right: "20px",
+    zIndex: 1,
   };
 
   const headerTextStyles = {
@@ -41,20 +44,49 @@ const Hero = () => {
     margin: "0 auto",
   };
 
+  const imageUploadStyles = {
+    display: "block",
+    maxWidth: "100%",
+    margin: "1rem auto",
+  };
+
+  // Function to handle image upload
+  const handleImageUpload = (event) => {
+    const selectedImage = event.target.files[0];
+    if (selectedImage) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setImage(e.target.result);
+      };
+      reader.readAsDataURL(selectedImage);
+    }
+  };
+
   return (
     <header style={heroStyles}>
-      <nav className='flex justify-between items-center mb-10 pt-3'>
-        <img src={logo} alt='sumz_logo' style={logoStyles} />
+      <nav className="flex justify-between items-center mb-10 pt-3">
+        <img src={logo} alt="sumz_logo" style={logoStyles} />
         <button
-          type='button'
+          type="button"
           onClick={() => window.open("https://github.com/ninambash", "_blank")}
           style={buttonStyles}
         >
           GitHub
         </button>
       </nav>
+      <input
+        type="file"
+        accept="image/*" // Allow only image files
+        onChange={handleImageUpload}
+        style={{ display: "none" }} // Hide the input element
+        id="image-upload-input"
+      />
+      <label htmlFor="image-upload-input">
+        Upload Image
+      </label>
+      {image && <img src={image} alt="Uploaded" style={imageUploadStyles} />}
       <h1 style={headerTextStyles}>
-        Summarize Articles with <br className='max-md:hidden' />
+        Summarize Articles with <br className="max-md:hidden" />
         <span style={orangeTextStyles}>OpenAI GPT-4</span>
       </h1>
       <h2 style={descStyles}>

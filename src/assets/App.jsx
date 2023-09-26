@@ -1,17 +1,21 @@
 
 import Hero from "../components/Hero";
 import Demo from "../components/Demo";
+import Menu from "../components/Menu";
 
 const App = () => {
   return (
     <main style={styles.main}>
+       <Menu/>
       <div className='main' style={styles.mainContent}>
         <div className='gradient' style={styles.gradient} />
       </div>
 
       <div className='app' style={styles.app}>
-        <Hero />
-        <Demo />
+      
+      <Hero />
+      <Demo />
+       
       </div>
     </main>
   );

@@ -2,7 +2,11 @@
 
 const Demo = () => {
   return (
-    <div>Demo</div>
+    <div>Demo
+
+
+      Upload an image
+    </div>
   )
 }
 
