@@ -1,0 +1,143 @@
+/* Base Styles */
+.custom-navbar {
+    background-color: #333;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .custom-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .custom-navbar-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .custom-logo {
+    width: 100px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .custom-navbar-toggle {
+    display: none; /* Hide the toggle button by default */
+  }
+  
+  .custom-navbar-burger {
+    cursor: pointer;
+    display: none;
+  }
+  
+  /* Menu Items */
+  .custom-navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .custom-menu-item {
+    margin-right: 20px;
+  }
+  
+  .custom-menu-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-menu-link:hover {
+    color: #FF5733; /* Change color on hover */
+  }
+  
+  /* Dropdown Menu */
+  .custom-menu-dropdown {
+    position: relative;
+  }
+  
+  .custom-dropdown-toggle {
+    display: none;
+  }
+  
+  .custom-dropdown-label {
+    cursor: pointer;
+  }
+  
+  .custom-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+  }
+  
+  .custom-dropdown-menu li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .custom-dropdown-menu a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 34px;
+    padding: 10px 20px;
+    display: block;
+    transition: color 0.3s ease;
+  }
+  
+  .custom-dropdown-menu a:hover {
+    color: #FF5733; /* Change color on hover */
+  }
+  
+  .custom-menu-divider {
+    height: 1px;
+    background-color: #555;
+    margin: 5px 0;
+    padding: 0;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .custom-navbar-burger {
+      display: block; /* Show the burger icon on small screens */
+    }
+  
+    .custom-navbar-menu {
+      display: none; /* Hide the menu items by default on small screens */
+      flex-direction: column;
+      align-items: flex-start;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      padding: 10px 0;
+    }
+  
+    .custom-menu-item {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .custom-navbar-toggle:checked + .custom-navbar-burger + .custom-navbar-menu {
+      display: flex; /* Show the menu when the checkbox is checked */
+    }
+  
+    .custom-dropdown-toggle:checked + .custom-dropdown-label + .custom-dropdown-menu {
+      display: block; /* Show the dropdown menu when the checkbox is checked */
+    }
+  }
+  

@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { logo } from "../assets";
-
 
 const Hero = () => {
   const [image, setImage] = useState(null); // State to store uploaded image
@@ -10,10 +8,6 @@ const Hero = () => {
     padding: "2rem",
     textAlign: "center",
     position: "relative",
-  };
-
-  const logoStyles = {
-    width: "180px",
   };
 
   const buttonStyles = {
@@ -65,7 +59,6 @@ const Hero = () => {
   return (
     <header style={heroStyles}>
       <nav className="flex justify-between items-center mb-10 pt-3">
-        <img src={logo} alt="sumz_logo" style={logoStyles} />
         <button
           type="button"
           onClick={() => window.open("https://github.com/ninambash", "_blank")}
